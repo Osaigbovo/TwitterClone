@@ -1,4 +1,4 @@
-package com.osaigbovo.twitterclone
+package com.osaigbovo.twitterclone.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
