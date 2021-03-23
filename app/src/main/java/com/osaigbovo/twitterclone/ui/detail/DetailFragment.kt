@@ -6,14 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.osaigbovo.twitterclone.R
+import com.osaigbovo.twitterclone.databinding.FragmentDetailBinding
+import com.osaigbovo.twitterclone.databinding.FragmentHomeBinding
 
-class DetailFragment : Fragment() {
+class DetailFragment : Fragment(R.layout.fragment_detail) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail, container, false)
+    private var fragmentDetailBinding: FragmentDetailBinding? = null
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val binding = FragmentDetailBinding.bind(view)
+        fragmentDetailBinding = binding
+    }
+
+    override fun onDestroyView() {
+        fragmentDetailBinding = null
+        super.onDestroyView()
     }
 }
