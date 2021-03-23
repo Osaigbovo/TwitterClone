@@ -1,15 +1,18 @@
 package com.osaigbovo.twitterclone.ui.detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.osaigbovo.twitterclone.R
 import com.osaigbovo.twitterclone.databinding.FragmentDetailBinding
-import com.osaigbovo.twitterclone.databinding.FragmentHomeBinding
+import com.osaigbovo.twitterclone.ui.home.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailFragment : Fragment(R.layout.fragment_detail) {
+
+    private val homeViewModel: HomeViewModel by viewModels({ requireActivity() })
 
     private var fragmentDetailBinding: FragmentDetailBinding? = null
 
