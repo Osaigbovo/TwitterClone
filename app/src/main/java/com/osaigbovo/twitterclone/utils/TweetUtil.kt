@@ -75,7 +75,7 @@ fun generateTweets(): List<Tweet> {
             5,
             "Zia Burkett",
             "@Burketto",
-            "1h",
+            "23m",
             "Hey there !!",
             R.drawable.profile_5,
             "",

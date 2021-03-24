@@ -18,7 +18,9 @@ class TweetRepositoryImpl @Inject constructor() : TweetRepository {
 
             delay(500) // simulate network calls
 
-            emit(Result.Success(generateTweets()))
+            emit(Result.Success(generateTweets().sortedBy {
+                it.minutes
+            }))
         }.catch {
             emit(Result.Error(Exception("An Error Occurred...")))
         }.retryWhen { cause, attempt ->
