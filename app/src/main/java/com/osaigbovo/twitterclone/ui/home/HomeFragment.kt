@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.RecyclerView
 import com.osaigbovo.twitterclone.R
 import com.osaigbovo.twitterclone.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -56,6 +57,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                         displayError(it.error, false)
                         homeAdapter = HomeAdapter(it.tweets)
                         fragmentHomeBinding!!.recyclerView.adapter = homeAdapter
+
+                        homeAdapter.stateRestorationPolicy =
+                            RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
 
                         homeAdapter.onItemClickListener = { tweet ->
                             // Navigate to Tweet Details.
