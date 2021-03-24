@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.osaigbovo.twitterclone.R
 import com.osaigbovo.twitterclone.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +25,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentHomeBinding.bind(view)
         fragmentHomeBinding = binding
+
+        fragmentHomeBinding!!.toolbarHome.setupWithNavController(findNavController())
 
         fragmentHomeBinding!!.swipeRefreshLayout.setOnRefreshListener {
             homeViewModel.getTweet()
