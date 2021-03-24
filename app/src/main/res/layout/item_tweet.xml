@@ -24,6 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:fontFamily="@font/helvetica_neue_lt_pro_bold"
         android:textColor="@color/twitter_extra_extra_light_gray"
         app:layout_constraintStart_toEndOf="@+id/image_profile"
@@ -37,6 +39,8 @@
         android:layout_marginStart="4dp"
         android:fontFamily="@font/helvetica_neue_lt_pro"
         android:textColor="@color/twitter_light_gray"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_name"
         app:layout_constraintStart_toEndOf="@+id/text_name"
         app:layout_constraintTop_toTopOf="@+id/text_name"
         tools:text="@string/user_handle" />
@@ -70,8 +74,10 @@
         android:id="@+id/text_tweet"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textSize="16sp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:lineSpacingExtra="6dp"
         android:fontFamily="@font/helvetica_neue_lt_pro"
         android:textColor="@color/twitter_extra_extra_light_gray"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,10 +92,12 @@
         android:layout_marginTop="8dp"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/text_tweet"
         app:layout_constraintStart_toStartOf="@+id/text_tweet"
         app:layout_constraintTop_toBottomOf="@+id/text_tweet"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        tools:srcCompat="@tools:sample/backgrounds/scenic"
+        tools:visibility="visible" />
 
     <com.google.android.material.internal.CheckableImageButton
         android:id="@+id/button_comment"
@@ -101,7 +109,7 @@
         android:clickable="true"
         android:contentDescription="@null"
         android:focusable="true"
-        app:layout_constraintStart_toStartOf="@+id/image_tweet"
+        app:layout_constraintStart_toStartOf="@+id/text_tweet"
         app:layout_constraintTop_toBottomOf="@+id/image_tweet"
         app:srcCompat="@drawable/ic_comment" />
 

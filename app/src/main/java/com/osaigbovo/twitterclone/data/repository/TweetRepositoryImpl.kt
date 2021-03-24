@@ -16,7 +16,7 @@ class TweetRepositoryImpl @Inject constructor() : TweetRepository {
         return flow {
             emit(Result.Loading)
 
-            delay(1500) // simulate network calls
+            delay(500) // simulate network calls
 
             emit(Result.Success(generateTweets()))
         }.catch {

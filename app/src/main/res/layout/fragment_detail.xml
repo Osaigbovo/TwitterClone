@@ -52,6 +52,8 @@
             android:layout_marginStart="12dp"
             android:fontFamily="@font/helvetica_neue_lt_pro_bold"
             android:textColor="@color/twitter_extra_extra_light_gray"
+            android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/text_handle"
             app:layout_constraintStart_toEndOf="@+id/image_profile"
             app:layout_constraintTop_toTopOf="parent"
@@ -65,6 +67,7 @@
             android:layout_marginTop="8dp"
             android:fontFamily="@font/helvetica_neue_lt_pro"
             android:textColor="@color/twitter_extra_extra_light_gray"
+            android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/text_tweet"
             app:layout_constraintStart_toStartOf="@+id/text_name"
             app:layout_constraintTop_toBottomOf="@+id/text_name"
@@ -91,8 +94,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
-            android:fontFamily="@font/helvetica_neue_lt_pro"
+            android:fontFamily="@font/helvetica_neue_lt_pro_bold"
+            android:lineSpacingExtra="6dp"
             android:textColor="@color/twitter_extra_extra_light_gray"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_profile"
@@ -327,5 +332,23 @@
             app:layout_constraintTop_toBottomOf="@+id/button_share" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/editText_tweet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:autofillHints="@null"
+        android:backgroundTint="@color/twitter_dark_gray"
+        android:ems="10"
+        android:hint="@string/tweet_your_reply"
+        android:inputType="textPersonName"
+        android:lines="5"
+        android:textColor="@color/white"
+        android:textColorHint="@color/twitter_dark_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
