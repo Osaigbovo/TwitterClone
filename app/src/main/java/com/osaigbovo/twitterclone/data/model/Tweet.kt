@@ -15,5 +15,7 @@ data class Tweet(
     val conImg: String?,
     val comment: Int?,
     val rt: Int?,
-    val like: Int?
+    val like: Int?,
+    val time: String?,
+    val date: String?
 ) : Parcelable

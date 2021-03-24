@@ -48,6 +48,8 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
 
         fragmentDetailBinding!!.textQuoteCount.text = quoteCount.toString()
         fragmentDetailBinding!!.textRetweetCount.text = retweet.toString()
+        fragmentDetailBinding!!.textTimeDay.text = tweet.time
+        fragmentDetailBinding!!.textDate.text = tweet.date
 
         if(tweet.tweet_image.isNullOrEmpty()){
             fragmentDetailBinding!!.imageTweet.visibility = View.GONE
