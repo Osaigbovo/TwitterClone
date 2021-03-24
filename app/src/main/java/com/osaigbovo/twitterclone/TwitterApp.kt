@@ -10,7 +10,9 @@ class TwitterApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
-        Timber.d("Creating our Application")
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+            Timber.d("Creating our Application")
+        }
     }
 }
