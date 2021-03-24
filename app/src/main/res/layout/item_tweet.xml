@@ -85,14 +85,15 @@
         app:layout_constraintTop_toBottomOf="@+id/text_name"
         tools:text="@string/user_tweet" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/image_tweet"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@null"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         android:visibility="gone"
+        app:shapeAppearanceOverlay="@style/roundedImageView"
         app:layout_constraintEnd_toEndOf="@+id/text_tweet"
         app:layout_constraintStart_toStartOf="@+id/text_tweet"
         app:layout_constraintTop_toBottomOf="@+id/text_tweet"

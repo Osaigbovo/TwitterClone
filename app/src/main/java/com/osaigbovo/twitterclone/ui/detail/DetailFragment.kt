@@ -10,6 +10,7 @@ import com.osaigbovo.twitterclone.R
 import com.osaigbovo.twitterclone.data.model.Tweet
 import com.osaigbovo.twitterclone.databinding.FragmentDetailBinding
 import com.osaigbovo.twitterclone.ui.home.HomeViewModel
+import com.osaigbovo.twitterclone.utils.GlideApp
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -48,6 +49,14 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         fragmentDetailBinding!!.textQuoteCount.text = quoteCount.toString()
         fragmentDetailBinding!!.textRetweetCount.text = retweet.toString()
 
-
+        if(tweet.tweet_image.isNullOrEmpty()){
+            fragmentDetailBinding!!.imageTweet.visibility = View.GONE
+        } else {
+            fragmentDetailBinding!!.imageTweet.visibility = View.VISIBLE
+            GlideApp.with(this)
+                .load(tweet.tweet_image)
+                .centerCrop()
+                .into(fragmentDetailBinding!!.imageTweet)
+        }
     }
 }
