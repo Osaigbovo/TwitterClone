@@ -35,7 +35,19 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         super.onDestroyView()
     }
 
-    private fun displayTweet(tweet: Tweet){
+    private fun displayTweet(tweet: Tweet) {
+        tweet.prof?.let { fragmentDetailBinding!!.imageProfile.setImageResource(it) }
+        fragmentDetailBinding!!.textName.text = tweet.name
+        fragmentDetailBinding!!.textHandle.text = tweet.handle
+        fragmentDetailBinding!!.textTweet.text = tweet.content
+        fragmentDetailBinding!!.textLikeCount.text = tweet.like.toString()
+
+        val quoteCount = 3
+        val retweet = tweet.rt?.minus(3)
+
+        fragmentDetailBinding!!.textQuoteCount.text = quoteCount.toString()
+        fragmentDetailBinding!!.textRetweetCount.text = retweet.toString()
+
 
     }
 }
